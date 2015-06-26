@@ -1,7 +1,9 @@
-require ('sinatra')
-require ('sinatra/reloader') if development?
-require ('imdb')
 
+
+require_relative('lib/filter.rb')
+require ('sinatra')
+require ('imdb')
+require ('sinatra/reloader') if development?
 
 
 get "/poster" do 
@@ -13,12 +15,11 @@ post "/poster" do
 	@word = params[:word]
 
 	search = Imdb::Search.new(@word)
-	movie = search.movies[0..8]
+	movie = search.movies[0..14]
 
-	@posters = movie.map do |movie|
-		movie.poster
-	end
-
+	fil = Filter.new
+	fil.forage(movie)
+	@pic = fil.cut
 
 	erb(:display)
 end

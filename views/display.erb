@@ -1,15 +1,29 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="display.css">
+	</head>
 
-<link rel="stylesheet" type="text/css" href="display.css">
+	<body>
+		<form action="/display" method="POST">
 
-<form action="/display" method="POST">
+			<h3>9 movie titles that contant your chosen word</h3>
+			<h3>What movie was made in 1997?</h3>
 
-<h3>9 movie titles that contant your chosen word</h3>
-<h3>What movie was made in 1997?</h3>
+			<div>
+			<% @pic.each do |item| %>
+		    <img src="<%= item %>" class="image"/>
+			<% end %>
+			</div>
+
+<br>
+<br>
+
+			<a href="/poster">back to search</a>
+
+		</form>
+	</body>	
 
 
-<% @posters.each do |item| %>
-	 <img src="<%= item %>"/>
-<% end %>
-</form>
+</html>
 
 
