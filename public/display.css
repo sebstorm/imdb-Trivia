@@ -5,6 +5,11 @@ img{
 	padding: 10;
 }
 
+.main{
+	text-align: center;
+
+}
+
 form{
 	text-align: center;
 }
@@ -21,4 +26,15 @@ button{
 	background-color: yellow;
 }
 
+.nest{
 
+}
+
+
+#posterbutton {
+background-color: transparent;
+display: inline;
+margin: auto;
+padding: 10;
+
+}
